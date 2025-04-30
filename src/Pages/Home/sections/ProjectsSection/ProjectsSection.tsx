@@ -16,8 +16,8 @@ const ProjectsSection: React.FC = () => {
             srcImg: "/src/assets/images/password.png",
             description: "This is a Java-based secure password generator that allows you to create strong and encrypted passwords. The application offers customizable options like password length, inclusion of special characters, numbers, and exclusion of similar characters. Additionally, it also encrypts and saves the generated passwords to a file.",
             technologies: "Technologies: Java",
-            websiteURL: "https://trello.com/",
-            codeURL: "https://github.com/",
+            websiteURL: "https://github.com/lucasvittor/password",
+            codeURL: "https://github.com/lucasvittor/password",
         },
         {
             title: "Los Santos Customs",
@@ -25,8 +25,8 @@ const ProjectsSection: React.FC = () => {
             srcImg: "/src/assets/images/los.png",
             description: "The Automotive Workshop Landing Page is a project developed with Next.js and Tailwind CSS, inspired by the iconic Los Santos Customs from the GTA 5 game. Created to present a workshop specialized in tuning and customizing vehicles, the objective is to provide information about the company.",
             technologies: "Technologies: Next.js",
-            websiteURL: "https://trello.com/",
-            codeURL: "https://github.com/",
+            websiteURL: "https://los-santos-customscom.vercel.app/",
+            codeURL: "https://github.com/lucasvittor/los-santos-customs",
         }
     ]
 
