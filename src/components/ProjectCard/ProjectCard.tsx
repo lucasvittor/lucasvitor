@@ -4,32 +4,18 @@ import StyledButton from "../StyledButton/StyledButton";
 export interface ProjectCardProps {
     title: string;
     subtitle: string;
-    srcImg: string;
     description: string
     technologies: string
     websiteURL: string;
-    codeURL: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
     title,
     subtitle,
-    srcImg,
     description,
     technologies,
     websiteURL,
-    codeURL
 }) => {
-
-    const StyledImg = styled("img")(({ theme }) => ({
-        width: "100%",
-        objectFit: "contain",
-        height: "80vw",
-        padding: "10px 0",
-        [theme.breakpoints.up('md')]: {
-            height: "45vh",
-        },
-    }));
 
     const StyledCard = styled("div")(({ theme }) => ({
         borderRadius: "3px",
@@ -50,7 +36,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <Typography >
                 {subtitle}
             </Typography>
-            <StyledImg src={srcImg} />
             <Typography>
                 {description}
             </Typography>
@@ -60,9 +45,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <Grid container spacing={1} pt={2}>
                 <Grid item xs={6}>
                     <StyledButton onClick={() => window.open(websiteURL)}>View Project</StyledButton>
-                </Grid>
-                <Grid item xs={6}>
-                    <StyledButton onClick={() => window.open(codeURL)}>View Code</StyledButton>
                 </Grid>
             </Grid>
         </StyledCard>

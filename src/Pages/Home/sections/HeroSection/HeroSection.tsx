@@ -35,7 +35,7 @@ const HeroSection: React.FC = () => {
     }));
 
     const handleDownload = () => {
-            window.open(CV, '_blank');
+        window.open(CV, '_blank');
     };
 
     const handleWhatsapp = () => {
@@ -49,62 +49,62 @@ const HeroSection: React.FC = () => {
     return (
         <>
             <StyledHero >
-    <Container maxWidth="lg">
-        <Grid container spacing={2} alignItems="center" justifyContent="center">
-            <Grid item xs={12} md={5}>
-                <Box position="relative" pb={3}>
-                    <Box width={"150%"} position="absolute" top={-100} right={0}>
-                        <AnimatedBackground />
-                    </Box>
-                    <Box textAlign="center">
-                        <StyledImg src={Avatar} />
-                    </Box>
-                </Box>
-            </Grid>
-            <Grid item xs={12} md={7}>
-                <Box textAlign="center">
-                    <Typography color="primary.contrastText" variant="h1" pb={2}>
-                        Lucas Vitor
-                    </Typography>
-                    <Typewriter
-                        text="Information Security Analyst"
-                        delay={120}
-                        variant="h4"
-                        color="primary.contrastText"
-                    />
-                </Box>
-                <Box mt={3}>
-                    <Grid container spacing={3} justifyContent="center">
-                        <Grid item xs={10} md={4}>
-                            <StyledButton onClick={handleDownload}>
-                                <PreviewIcon />
-                                <Typography>
-                                    View CV
-                                </Typography>
-                            </StyledButton>
+                <Container maxWidth="lg">
+                    <Grid container spacing={2} alignItems="center" justifyContent="center">
+                        <Grid item xs={12} md={5}>
+                            <Box position="relative" pb={3}>
+                                <Box width={"150%"} position="absolute" top={-100} right={0}>
+                                    <AnimatedBackground />
+                                </Box>
+                                <Box textAlign="center">
+                                    <StyledImg src={Avatar} />
+                                </Box>
+                            </Box>
                         </Grid>
-                        <Grid item xs={10} md={4}>
-                            <StyledButton onClick={handleWhatsapp}>
-                                <WhatsAppIcon />
-                                <Typography>
-                                    Contact me
+                        <Grid item xs={12} md={7}>
+                            <Box textAlign="center">
+                                <Typography color="primary.contrastText" variant="h1" pb={2}>
+                                    Lucas Vitor
                                 </Typography>
-                            </StyledButton>
-                        </Grid>
-                        <Grid item xs={10} md={4}>
-                            <StyledButton onClick={handleLinkedIn}>
-                                <LinkedInIcon />
-                                <Typography>
-                                    LinkedIn
-                                </Typography>
-                            </StyledButton>
+                                <Typewriter
+                                    text="Information Security Analyst"
+                                    delay={120}
+                                    variant="h4"
+                                    color="primary.contrastText"
+                                />
+                            </Box>
+                            <Box mt={3}>
+                                <Grid container spacing={3} justifyContent="center">
+                                    <Grid item xs={10} md={4}>
+                                        <StyledButton onClick={handleDownload}>
+                                            <PreviewIcon />
+                                            <Typography>
+                                                View CV
+                                            </Typography>
+                                        </StyledButton>
+                                    </Grid>
+                                    <Grid item xs={10} md={4}>
+                                        <StyledButton onClick={handleWhatsapp}>
+                                            <WhatsAppIcon />
+                                            <Typography>
+                                                Contact me
+                                            </Typography>
+                                        </StyledButton>
+                                    </Grid>
+                                    <Grid item xs={10} md={4}>
+                                        <StyledButton onClick={handleLinkedIn}>
+                                            <LinkedInIcon />
+                                            <Typography>
+                                                LinkedIn
+                                            </Typography>
+                                        </StyledButton>
+                                    </Grid>
+                                </Grid>
+                            </Box>
                         </Grid>
                     </Grid>
-                </Box>
-            </Grid>
-        </Grid>
-    </Container>
-</StyledHero>
+                </Container>
+            </StyledHero>
 
         </>
     )
