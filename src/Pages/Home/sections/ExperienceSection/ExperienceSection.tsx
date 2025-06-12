@@ -1,4 +1,4 @@
-import { Box, Container, Typography, styled, useTheme } from "@mui/material";
+import { Box, Container, Typography, styled, } from "@mui/material";
 
 const TimelineContainer = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -21,11 +21,6 @@ const VerticalLine = styled(Box)(({ theme }) => ({
   },
 }));
 
-const SectionHeader = styled(Box)(({ theme }) => ({
-  textAlign: "center",
-  marginBottom: theme.spacing(8),
-  
-}));
 
 const TimelineItem = styled(Box)<{ align: 'left' | 'right' }>(({ theme, align }) => ({
   display: "flex",

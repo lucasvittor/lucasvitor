@@ -11,6 +11,7 @@ import CV from "../../../../assets/pdfs/CV Lucas Vitor.pdf"
 const HeroSection: React.FC = () => {
 
     const StyledImg = styled("img")(({ theme }) => ({
+        backgroundColor: theme.palette.primary.main,
         width: "100%",
         borderRadius: "10%",
         position: "relative"
