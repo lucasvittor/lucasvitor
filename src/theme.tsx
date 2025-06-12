@@ -9,7 +9,7 @@ let theme = createTheme({
     },
     palette: {
         primary: {
-            main: '#333',
+            main: '#0e0f2b',
         },
         secondary: {
             main: '#5c5c5c',

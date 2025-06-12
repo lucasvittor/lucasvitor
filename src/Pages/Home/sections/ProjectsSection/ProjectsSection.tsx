@@ -1,76 +1,83 @@
 import { Box, Container, Grid, Typography, styled } from "@mui/material";
-import ProjectCard, { ProjectCardProps } from "../../../../components/ProjectCard/ProjectCard";
 import AnimationComponent from "../../../../components/AnimationComponent/AnimationComponent";
+import ProjectCard, { ProjectCardProps } from "../../../../components/ProjectCard/ProjectCard";
+
+const StyledProjects = styled("section")(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.primary.contrastText,
+  paddingTop: theme.spacing(10),
+  paddingBottom: theme.spacing(10),
+}));
+
+const HighlightText = styled("span")({
+  color: "#fdd835",
+});
+
+  const allProjects: ProjectCardProps[] = [
+  {
+    title: "SySecure",
+    subtitle: "May 2025",
+    description: "Shell script for auditing Linux systems: updates, firewall, passwords, and reporting.",
+    websiteURL: "https://github.com/lucasvittor/sysecure",
+    imageURL: "/public/projects/sysecure.png",
+  },
+  {
+    title: "Nmap",
+    subtitle: "Apr 2025",
+    description: "Basic network scanning with Nmap. Host discovery, port scan, version detection.",
+    websiteURL: "https://github.com/lucasvittor/nmap-junior",
+    imageURL: "https://miro.medium.com/v2/resize:fit:675/1*MlLvWoOg1c-PBerXGVs77w.jpeg",
+  },
+  {
+    title: "Password Generator",
+    subtitle: "Mar 2025",
+    description: "Java-based encrypted password generator with custom and secure options.",
+    websiteURL: "https://github.com/lucasvittor/password",
+    imageURL: "/public/projects/password.png",
+  },
+  {
+    title: "Wireshark",
+    subtitle: "May 2025",
+    description: "Traffic capturing, filtering, and ARP spoofing detection for training.",
+    websiteURL: "https://github.com/lucasvittor/wireshark-lab",
+    imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJAsC5_u32tr_QG4SvCTC8XeWbrfJ2T27LOg&s",
+  },
+    {
+    title: "AutoClear",
+    subtitle: "Jan 2025",
+    description: "Shell script aims to facilitate the maintenance of Linux systems.",
+    websiteURL: "https://github.com/lucasvittor/autoclear",
+    imageURL: "/public/projects/autoclear.png",
+  },
+];
+
 
 const ProjectsSection: React.FC = () => {
+  return (
+    <StyledProjects id="projects">
+      <Container maxWidth="lg">
+        <Box textAlign="center" mb={4}>
+          <Typography variant="subtitle2" color="#00e676" fontWeight={400}>
+            WHEN BOREDOM HITS
+          </Typography>
+          <Typography variant="h3" color="#fff" fontWeight={900}>
+            Personal <HighlightText>Projects</HighlightText>
+          </Typography>
+        </Box>
 
-    const StyledExperience = styled("div")(({ theme }) => ({
-        backgroundColor: theme.palette.primary.main,
-
-    }));
-
-    const projects = [
-
-        {
-            title: "Password",
-            subtitle: "Mar 2025 - Mar 2025",
-            description: "This is a Java-based secure password generator that lets you create strong and encrypted passwords. The app offers customizable options like password length, inclusion of special characters, numbers, and exclusion of similar characters. Additionally, it also encrypts and saves.",
-            technologies: "Technologies: Java",
-            websiteURL: "https://github.com/lucasvittor/password",
-            codeURL: "https://github.com/lucasvittor/password",
-        },
-        {
-            title: "SySecure - Linux Security Script",
-            subtitle: "May 2025 - May 2025",
-            description: "SySecure is a Shell Script designed for basic auditing of Linux machines. It checks for updates, weak passwords, firewall status, and other security indicators. The script also generates PDF and log reports, helping IT support and security professionals perform preventive maintenance.",
-            technologies: "Technologies: Bash, Linux CLI, UFW, ps2pdf",
-            websiteURL: "https://github.com/lucasvittor/sysecure",
-            codeURL: "https://github.com/lucasvittor/sysecure",
-        },
-        {
-            title: "Wireshark - Traffic Analysis Lab",
-            subtitle: "May 2025 - May 2025",
-            description: "This project showcases traffic analysis using Wireshark, including:\n- Capturing interfaces: `wireshark &`\n- Filtering traffic: `http`, `tcp.port==80`, `dns`, `arp`\n- Simulated ARP spoofing for detection training.\nIt aims to build a packet-level understanding of network behavior and anomalies.",
-            technologies: "Technologies: Wireshark, Networking, ARP, TCP/IP",
-            websiteURL: "https://github.com/lucasvittor/wireshark-lab",
-            codeURL: "https://github.com/lucasvittor/wireshark-lab",
-        },
-        {
-            title: "Nmap - Junior Level",
-            subtitle: "Apr 2025 - Apr 2025",
-            description: "This project demonstrates network scanning fundamentals using Nmap. Scripts include:\n- Host discovery: `nmap -sn 192.168.0.0/24`\n- Port scanning: `nmap -sS 192.168.0.10`\n- Version detection and OS scan: `nmap -sV -O 192.168.0.10`\nThe goal is to introduce junior analysts to real-world reconnaissance processes.",
-            technologies: "Technologies: Nmap, Bash, Networking",
-            websiteURL: "https://github.com/lucasvittor/nmap-junior",
-            codeURL: "https://github.com/lucasvittor/nmap-junior",
-        }
-
-    ]
+        <Grid container spacing={4} justifyContent="center">
+          {allProjects.map((project: ProjectCardProps, index: number) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <AnimationComponent moveDirection={index % 2 === 0 ? "right" : "left"}>
+                <ProjectCard {...project} />
+              </AnimationComponent>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </StyledProjects>
+  );
+};
 
 
-    return (
-        <StyledExperience>
-            <Container maxWidth="lg">
-                <Box id="projects" pt={5} pb={3}>
-                    <Typography variant="h2" textAlign="center" color="primary.contrastText">Projects</Typography>
-                </Box>
-                <Grid container spacing={5} pb={3}>
-                    {projects.map((project: ProjectCardProps, index: number) => (
-                        <Grid item md={6} key={index}>
-                            <AnimationComponent moveDirection={index % 2 == 0 ? "right" : "left"}>
-                                <ProjectCard
-                                    title={project.title}
-                                    subtitle={project.subtitle}
-                                    description={project.description}
-                                    technologies={project.technologies}
-                                    websiteURL={project.websiteURL}
-                                />
-                            </AnimationComponent>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
-        </StyledExperience>
-    )
-}
-
-export default ProjectsSection
+export default ProjectsSection;

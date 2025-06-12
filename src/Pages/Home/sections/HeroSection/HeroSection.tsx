@@ -12,7 +12,6 @@ const HeroSection: React.FC = () => {
 
     const StyledImg = styled("img")(({ theme }) => ({
         width: "100%",
-        border: `1px solid ${theme.palette.primary.contrastText}`,
         borderRadius: "10%",
         position: "relative"
     }));
@@ -39,11 +38,11 @@ const HeroSection: React.FC = () => {
     };
 
     const handleWhatsapp = () => {
-        window.open("https://wa.me/5586995186495", "_blank");
+        window.open("https://wa.me/5586995186495");
     };
 
     const handleLinkedIn = () => {
-        window.open("https://www.linkedin.com/in/lucasvittor", "_blank");
+        window.open("https://www.linkedin.com/in/lucasvittor");
     };
 
     return (
@@ -67,10 +66,10 @@ const HeroSection: React.FC = () => {
                                     Lucas Vitor
                                 </Typography>
                                 <Typewriter
-                                    text="Information Security Analyst"
+                                    text="Future Cybersecurity Specialist"
                                     delay={120}
                                     variant="h4"
-                                    color="primary.contrastText"
+                                    color="#00e676"
                                 />
                             </Box>
                             <Box mt={3}>

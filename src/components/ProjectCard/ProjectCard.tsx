@@ -1,54 +1,78 @@
-import { Grid, Typography, styled } from "@mui/material";
-import StyledButton from "../StyledButton/StyledButton";
+import { Box, Typography, styled } from "@mui/material";
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export interface ProjectCardProps {
-    title: string;
-    subtitle: string;
-    description: string
-    technologies: string
-    websiteURL: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  websiteURL: string;
+  imageURL: string;
 }
+
+const CardContainer = styled("div")(({ theme }) => ({
+  borderRadius: 50,
+  gap: "10px",
+  marginTop:"10px",
+  overflow: "hidden",
+  background: "rgb(23, 24, 46)" ,
+  boxShadow: theme.shadows[5],
+  transition: "0.3s ease",
+  '&:hover': {
+    transform: "scale(1.02)",
+  },
+}));
+
+const ImageTop = styled("img")({
+  width: "100%",
+  height: 180,
+  objectFit: "cover",
+  display: "block",
+});
+
+const CardContent = styled("div")(({ theme }) => ({
+  padding: theme.spacing(3),
+  color: theme.palette.primary.contrastText,
+}));
+
+const ViewButton = styled("button")({
+  background: "linear-gradient(to right,#fdd835, #00c853)" ,
+  color: "#000",
+  fontWeight: "bold",
+  padding: "8px 20px",
+  borderRadius: "8px",
+  gap: "15px",
+  width: "40%",
+});
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
-    title,
-    subtitle,
-    description,
-    technologies,
-    websiteURL,
+  title,
+  subtitle,
+  description,
+  websiteURL,
+  imageURL,
 }) => {
+  return (
+    <CardContainer>
+      <ImageTop src={imageURL} alt={title} />
+      <CardContent>
+        <Typography variant="h6" fontWeight={700} gutterBottom>
+          {title}
+        </Typography>
+        <Typography variant="body2" fontWeight={500} gutterBottom>
+          {subtitle}
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          {description}
+        </Typography>
+        <Box textAlign="left">
+          <ViewButton onClick={() => window.open(websiteURL, "_blank")}>
+            <GitHubIcon />
+            View
+          </ViewButton>
+        </Box>
+      </CardContent>
+    </CardContainer>
+  );
+};
 
-    const StyledCard = styled("div")(({ theme }) => ({
-        borderRadius: "3px",
-        border: `0.5px solid  ${theme.palette.primary.contrastText}`,
-        backgroundColor: "transparent",
-        color: theme.palette.primary.contrastText,
-        padding: "20px",
-        '&:hover': {
-            backgroundColor: theme.palette.primary.light
-        }
-    }));
-
-    return (
-        <StyledCard>
-            <Typography variant="h5">
-                {title}
-            </Typography>
-            <Typography >
-                {subtitle}
-            </Typography>
-            <Typography>
-                {description}
-            </Typography>
-            <Typography fontWeight={600} pt={2}>
-                {technologies}
-            </Typography>
-            <Grid container spacing={1} pt={2}>
-                <Grid item xs={6}>
-                    <StyledButton onClick={() => window.open(websiteURL)}>View Project</StyledButton>
-                </Grid>
-            </Grid>
-        </StyledCard>
-    )
-}
-
-export default ProjectCard
+export default ProjectCard;

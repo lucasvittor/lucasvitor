@@ -1,122 +1,96 @@
-import { Box, Card, Container, Divider, Grid, Typography, styled } from "@mui/material";
-import SchoolIcon from '@mui/icons-material/School';
-import AnimationComponent from "../../../../components/AnimationComponent/AnimationComponent";
+import { Box, Button, Container, Grid, Typography, styled } from "@mui/material";
+import { motion } from "framer-motion";
 import About from "../../../../assets/images/about.png";
+import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
+import GitHubIcon from '@mui/icons-material/GitHub';
 
-const AboutSection: React.FC = () => {
-    const StyledWrapper = styled("div")(({ theme }) => ({
-        backgroundColor: theme.palette.primary.main,
-        color: theme.palette.primary.contrastText,
-        width: "100%",
-        paddingTop: "50px",
-        paddingBottom: "50px",
-    }));
+const SectionWrapper = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
+  color: "#ffffff",
+  padding: "80px 0",
+}));
 
-    const StyledCard = styled(Card)(({ theme }) => ({
-        padding: "20px",
-        textAlign: "center",
-        borderRadius: "16px",
-        boxShadow: theme.shadows[4],
-        transition: "all 0.3s ease-in-out",
-        backgroundColor: theme.palette.background.paper,
-        '&:hover': {
-            backgroundColor: theme.palette.secondary.light,
-            transform: "scale(1.03)",
-        }
-    }));
+const HighlightText = styled("span")({
+  color: "#fdd835",
+});
 
-    const StyledImg = styled("img")(({ theme }) => ({
-        width: "100%",
-        maxWidth: 300,
-        border: `1px solid ${theme.palette.primary.contrastText}`,
-        borderRadius: "12px",
-        position: "relative",
-        zIndex: 2,
-    }));
+const DownloadButton = styled(Button)(({ theme }) => ({
+  background: "linear-gradient(to right,#fdd835, #00c853)" ,
+  color: "#000",
+  fontWeight: "bold",
+  padding: "12px 24px",
+  borderRadius: "8px",
+  gap: "10px",
+  width: "30%",
+  marginTop: theme.spacing(4),
+  '&:hover': {
+    backgroundColor: "#00e5ff",
+  },
+}));
 
-    const skillsSet = [
-        "ISO 27001", "LGPD", "IAM", "ITIL 4", "SIEM", "Firewalls",
-        "NMAP", "VLAN", "DMZ", "Python", "Linux", "Cryptography"
-    ];
+const StyledImageWrapper = styled(Box)({
+  position: "relative",
+  width: "fit-content",
+  marginLeft: "auto",
+  marginRight: "auto",
+});
 
-    const certifications = [
-        { title: "CompTIA Network+ (N10-008)", issuer: "Coursera" },
-        { title: "Intro to Pentest in Practice", issuer: "Desec Security" },
-        { title: "Cybersecurity Analyst (Governance)", issuer: "IBSEC" },
-        { title: "Cybersecurity Best Practices", issuer: "IBSEC" },
-    ];
+const ImageBackground = styled(Box)({
+  position: "absolute",
+  top: -60,
+  right: 0,
+  width: "150%",
+  zIndex: 0,
+});
 
-    return (
-        <StyledWrapper>
-            <Container maxWidth="lg">
-                <Box id="about" pt={7} mb={5}>
-                    <Typography variant="h2" textAlign="center" fontWeight={700}>
-                        About Me
-                    </Typography>
-                </Box>
-                <Grid container spacing={4} alignItems="center" justifyContent="center">
-                    <Grid item xs={12} md={6}>
-                        <Box>
-                            <Typography variant="body1" fontSize={18} lineHeight={1.8} paragraph>
-                                I'm Lucas, an IT Assistant at Unimed, with a degree in Systems Analysis and Development. I have experience in technical support, process automation, and IT infrastructure, and I'm currently transitioning and specializing in Information Security.
-                            </Typography>
-                            <Typography variant="body1" fontSize={18} lineHeight={1.8} paragraph>
-                                I work with diagnosis and problem solving, network configuration, access control, and the maintenance of corporate environments. I have an analytical mindset, a strong focus on failure prevention, and a genuine passion for learning and applying effective security practices.
-                            </Typography>
-                            <Typography variant="body1" fontSize={18} lineHeight={1.8}>
-                                Although I’m a developer by training, the <strong>dev mode only kicks in when boredom strikes</strong> — my main focus right now is advancing through a postgraduate degree in Cybersecurity.
-                            </Typography>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} md={5}>
-                        <Box position="relative" pb={3}>
-                            <Box textAlign="center">
-                                <StyledImg src={About} alt="About illustration" />
-                            </Box>
-                        </Box>
-                    </Grid>
-                </Grid>
-                <Box mt={8}>
-                    <Grid container spacing={4} justifyContent="center">
-                        {certifications.map((cert, index) => (
-                            <Grid item key={index} xs={12} sm={6} md={5} lg={3}>
-                                <AnimationComponent moveDirection={index % 2 === 0 ? "right" : "left"}>
-                                    <StyledCard variant="outlined">
-                                        <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                                            <SchoolIcon fontSize="large" sx={{ mb: 1, color: "primary.main" }} />
-                                            <Typography fontWeight={600} fontSize={16} textAlign="center">
-                                                {cert.title}
-                                            </Typography>
-                                            <Typography color="text.secondary" fontSize={14}>
-                                                {cert.issuer}
-                                            </Typography>
-                                        </Box>
-                                    </StyledCard>
-                                </AnimationComponent>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
-                <Divider sx={{ my: 6, bgcolor: "secondary.main" }} />
-                <Box id="skills" mb={3}>
-                    <Typography variant="h3" textAlign="center" fontWeight={600}>
-                        Skills
-                    </Typography>
-                </Box>
-                <Box mb={5}>
-                    <Grid container spacing={2} justifyContent="center">
-                        {skillsSet.map((skill, index) => (
-                            <Grid item key={index} xs={6} sm={4} md={2}>
-                                <StyledCard variant="outlined">
-                                    <Typography fontWeight={500}>{skill}</Typography>
-                                </StyledCard>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
-            </Container>
-        </StyledWrapper>
-    );
+const StyledImage = styled(motion.img)({
+  maxWidth: "350px",
+  borderRadius: "10%",
+  position: "relative",
+  zIndex: 1,
+});
+
+const AboutSection = () => {
+  return (
+    <SectionWrapper id="about">
+      <Container maxWidth="lg">
+        <Grid container spacing={2} alignItems="center" justifyContent="center">
+          {/* Texto */}
+          <Grid item xs={12} md={7}>
+            <Box pr={{ md: 5 }} mb={{ xs: 5, md: 0 }}>
+              <Typography variant="subtitle1" color="#00e676" fontWeight="bold" gutterBottom>
+                ABOUT ME
+              </Typography>
+              <Typography variant="h3" fontWeight="bold" gutterBottom>
+                Son of the living <HighlightText>God</HighlightText>
+              </Typography>
+              <Typography variant="body1" color="rgba(255,255,255,0.7)" paragraph>
+                I'm Lucas, a passionate IT Assistant focused on Cybersecurity, Infrastructure and Automation. I seek to transform ideas into impact, always inspired by Jesus, the true Firewall of my life, who protects, guides and gives purpose to every line of code I write.
+              </Typography>
+              <DownloadButton variant="contained" href="https://github.com/lucasvittor">
+              <GitHubIcon />
+                GitHub
+              </DownloadButton>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} md={5}>
+            <StyledImageWrapper>
+              <ImageBackground>
+                <AnimatedBackground />
+              </ImageBackground>
+              <StyledImage
+                src={About}
+                alt="Lucas Vitor"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              />
+            </StyledImageWrapper>
+          </Grid>
+        </Grid>
+      </Container>
+    </SectionWrapper>
+  );
 };
 
 export default AboutSection;

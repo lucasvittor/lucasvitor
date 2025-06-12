@@ -80,8 +80,8 @@ export default function Navbar() {
                         <MenuItem onClick={() => handleSmoothScroll("about")}>
                             <StyledNavLink>About</StyledNavLink>
                         </MenuItem>
-                        <MenuItem onClick={() => handleSmoothScroll("skills")}>
-                            <StyledNavLink>Skills</StyledNavLink>
+                        <MenuItem onClick={() => handleSmoothScroll("experience")}>
+                            <StyledNavLink>Experience</StyledNavLink>
                         </MenuItem>
                         <MenuItem onClick={() => handleSmoothScroll("projects")}>
                             <StyledNavLink>Projects</StyledNavLink>
@@ -92,8 +92,8 @@ export default function Navbar() {
                     <MenuItem onClick={() => handleSmoothScroll("about")}>
                         <StyledNavLink>About</StyledNavLink>
                     </MenuItem>
-                    <MenuItem onClick={() => handleSmoothScroll("skills")}>
-                        <StyledNavLink>Skills</StyledNavLink>
+                    <MenuItem onClick={() => handleSmoothScroll("experience")}>
+                        <StyledNavLink>Experience</StyledNavLink>
                     </MenuItem>
                     <MenuItem onClick={() => handleSmoothScroll("projects")}>
                         <StyledNavLink>Projects</StyledNavLink>
