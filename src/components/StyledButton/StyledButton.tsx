@@ -6,7 +6,6 @@ interface StyledButtonProps {
   onClick?: () => void;
 }
 
-// Defina o botão estilizado FORA do componente, sem usar theme
 const CustomButton = styled("button")(() => ({
   background: "linear-gradient(to right,#fdd835, #00c853)",
   display: "inline-flex",
