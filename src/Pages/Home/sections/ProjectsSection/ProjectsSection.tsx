@@ -19,7 +19,7 @@ const HighlightText = styled("span")({
     subtitle: "May 2025",
     description: "Shell script for auditing Linux systems: updates, firewall, passwords, and reporting.",
     websiteURL: "https://github.com/lucasvittor/sysecure",
-    imageURL: "/public/projects/sysecure.png",
+    imageURL: "/projects/sysecure.png",
   },
   {
     title: "Nmap",
@@ -33,7 +33,7 @@ const HighlightText = styled("span")({
     subtitle: "Mar 2025",
     description: "Java-based encrypted password generator with custom and secure options.",
     websiteURL: "https://github.com/lucasvittor/password",
-    imageURL: "/public/projects/password.png",
+    imageURL: "/projects/password.png",
   },
   {
     title: "Wireshark",
@@ -47,7 +47,7 @@ const HighlightText = styled("span")({
     subtitle: "Jan 2025",
     description: "Shell script aims to facilitate the maintenance of Linux systems.",
     websiteURL: "https://github.com/lucasvittor/autoclear",
-    imageURL: "/public/projects/autoclear.png",
+    imageURL: "/projects/autoclear.png",
   },
 ];
 
