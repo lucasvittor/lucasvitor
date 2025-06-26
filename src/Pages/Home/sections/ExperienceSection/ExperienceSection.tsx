@@ -103,7 +103,7 @@ const Timeline = () => {
       company: "O C E Torres LTDA",
       date: "Out 2023 – Fev 2025",
       icon: "/icons/shopodonto.png",
-      align: "right",
+      align: "left",
       points: [
         "N1/N2 technical support, working with log analysis, incident response, access management (IAM) and practical application of ISO 27001, LGPD and ITIL 4 standards.",
         "Technical documentation, decision-making support, task automation and backup using Bash and Python, execution of preventive data protection practices.",
