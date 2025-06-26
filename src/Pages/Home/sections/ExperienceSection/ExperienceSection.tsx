@@ -89,7 +89,7 @@ const Timeline = () => {
       company: "Unimed Teresina - Operator",
       date: "Mai 2025 – Present",
       icon: "/icons/unimed.png",
-      align: "left",
+      align: "right",
       points: [
         "N1 technical support for users with a focus on agility and clarity.",
         "Task automation with powershell.",
