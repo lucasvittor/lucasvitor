@@ -1,6 +1,6 @@
 import { Box, Button, Container, Grid, Typography, styled } from "@mui/material";
 import { motion } from "framer-motion";
-import About from "../../../../assets/images/about.jpg";
+import About from "../../../../assets/images/avatar.jpg";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 import GitHubIcon from '@mui/icons-material/GitHub';
 
